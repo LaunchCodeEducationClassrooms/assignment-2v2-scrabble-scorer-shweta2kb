@@ -89,7 +89,11 @@ function scorerPrompt()  {
 0 - ${simpleScorer.name}: ${simpleScorer.description}\n
 1 - ${vowelBonusScorer.name}: ${vowelBonusScore.description}\n
 2 - ${scrabbleScorer.name}: ${scrabbleScorer.description}\n`)
-  let num = input.question("Enter 0, 1, or 2: ")
+  let num = input.question("Enter 0, 2, or 2: ")
+  if (num < 0 || num > 2) {
+    console.log("Invalid response")
+    scorerPrompt()
+  } 
   if (num == 0) {
     return console.log(`Your score for '${word}': \n${simpleScorer.scoringFunction(word)}`)
   } else if (num == 1) {
