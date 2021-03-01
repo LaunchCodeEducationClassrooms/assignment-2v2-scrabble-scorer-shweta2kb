@@ -128,12 +128,11 @@ function transform(object) {
 };
 
 let newPointStructure = transform(oldPointStructure);
-newPointStructure[' ']=0;
 
 function runProgram() {
   initialPrompt();
   scorerPrompt();
-  transform();
+
 }
 
 // Don't write any code below this line //
